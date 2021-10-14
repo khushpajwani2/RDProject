@@ -7,8 +7,6 @@ android {
     compileSdk 31
 
     defaultConfig {
-        aaptOptions.cruncherEnabled = false
-        aaptOptions.useNewCruncher = false
         applicationId "com.example.rdproject"
         minSdk 21
         targetSdk 31
