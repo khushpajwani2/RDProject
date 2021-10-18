@@ -3,6 +3,10 @@ plugins {
 }
 apply plugin: 'kotlin-android'
 
+final Properties props = new Properties()
+props.load(new FileInputStream('build.properties'))
+
+
 android {
     compileSdk 31
 
@@ -16,10 +20,26 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            keyAlias props['keystore.key.alias']
+            keyPassword props['keystore.key.password']
+            storeFile file(props['keystore.release'])
+            storePassword props['keystore.password']
+        }
+        debug {
+            storeFile file(props['keystore.debug'])
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
