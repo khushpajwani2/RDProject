@@ -33,7 +33,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -54,7 +54,6 @@ dependencies {
     // Katex
     implementation 'in.hourglass.mathrender:katexmathview:1.0.3'
     // Pin View
-//    implementation 'com.github.poovamraj:PinEditTextField:1.2.6'
     implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
