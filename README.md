@@ -1,4 +1,5 @@
-# RDProject 
+# RDProject
+ https://github.com/khushpajwani2/RDProject.git
  convert jks to p12 file above code
  give path of jks and p12 file the name and extension
  if error of key tool is there 

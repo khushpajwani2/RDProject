@@ -23,8 +23,8 @@ android {
     signingConfigs {
         release {
             keyAlias "key0"
-            keyPassword "123456"
             storeFile file("C:/Users/baps/AndroidStudioProjects/RDProject/keys/keyStore.jks")
+            keyPassword "123456"
             storePassword "123456"
         }
     }
